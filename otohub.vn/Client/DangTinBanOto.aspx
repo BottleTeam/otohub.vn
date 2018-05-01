@@ -79,7 +79,7 @@
              </table>
     </div>
         <div class="login">
-           <h3><i>Thông số kỹ&nbsp; thuật</i></h3>
+           <h3><i>Thông số kỹ thuật</i></h3>
             <table>
                  <tr>
                 <td><label>Kiểu dáng</label></td>

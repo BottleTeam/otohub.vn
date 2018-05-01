@@ -43,6 +43,7 @@
             <tr>
                <td colspan="2" class="auto-style4"> <asp:Label ID="Label1" runat="server"></asp:Label></td>
             </tr>
+           
             </table>
     </div>
         <div class="login">
