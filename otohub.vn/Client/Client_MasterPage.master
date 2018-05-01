@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Client_MasterPage.master.cs" Inherits="Client_Client_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 121px;
+            height: 112px;
+            float: left;
+        }
+        .auto-style2 {
+            height: 111px;
+        }
+        .auto-style3 {
+            float: right;
+            width: 137px;
+            margin-top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div class="auto-style1" style="border-style: solid">
+            logo full</div>
+        <div class="auto-style2" style="border-style: solid">
+            banner</div>
+        <br />
+        <div style="border-style: solid">
+            <asp:Panel ID="panelSearch" runat="server">
+                <asp:TextBox ID="txtSearch" runat="server"> </asp:TextBox>
+                <asp:Button ID="btnSearch" runat="server" Text="Tìm kiếm" />
+            </asp:Panel>
+            </div>
+        <br />
+        <div class="auto-style3" style="border-style: solid">
+            Tài khoản</div>
+        <asp:Menu ID="Menu1" runat="server" BackColor="Yellow" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="Medium" ForeColor="Black" Orientation="Horizontal" StaticSubMenuIndent="10px">
+            <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+            <DynamicMenuStyle BackColor="#F7F6F3" />
+            <DynamicSelectedStyle BackColor="#5D7B9D" />
+            <DynamicItemTemplate>
+                <%# Eval("Text") %>
+            </DynamicItemTemplate>
+            <Items>
+                <asp:MenuItem Text="Tìm kiếm" Value="Tìm kiếm">
+                    <asp:MenuItem Text="Tìm theo hãng" Value="Tìm theo hãng"></asp:MenuItem>
+                    <asp:MenuItem Text="Tìm theo khoảng giá" Value="Tìm theo khoảng giá"></asp:MenuItem>
+                    <asp:MenuItem Text="Tìm theo địa điểm" Value="Tìm theo địa điểm"></asp:MenuItem>
+                    <asp:MenuItem Text="Tìm kiếm nâng cao" Value="Tìm kiếm nâng cao"></asp:MenuItem>
+                </asp:MenuItem>
+                <asp:MenuItem Text="Salon" Value="Salon"></asp:MenuItem>
+                <asp:MenuItem Text="Đăng tin bán" Value="Đăng tin bán"></asp:MenuItem>
+            </Items>
+            <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+            <StaticMenuItemStyle BorderColor="#CC0000" BorderStyle="Solid" HorizontalPadding="5px" ItemSpacing="100px" VerticalPadding="2px" />
+            <StaticSelectedStyle BackColor="#5D7B9D" />
+        </asp:Menu>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        <br />
+        <br />
+        <div style="border-style: solid">
+            footer</div>
+    </div>
+    </form>
+</body>
+</html>
