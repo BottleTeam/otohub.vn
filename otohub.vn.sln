@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "otohub.vn", "otohub.vn\", "{50C176E9-BE42-461F-8492-65A31ED3D5D8}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_57815"
+		Debug.AspNetCompiler.PhysicalPath = "otohub.vn\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57815\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_57815"
+		Release.AspNetCompiler.PhysicalPath = "otohub.vn\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57815\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "57815"
+		SlnRelativePath = "otohub.vn\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50C176E9-BE42-461F-8492-65A31ED3D5D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50C176E9-BE42-461F-8492-65A31ED3D5D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {49A33CFC-AE17-4324-BD4B-B79C5C951787}
+	EndGlobalSection
+EndGlobal
