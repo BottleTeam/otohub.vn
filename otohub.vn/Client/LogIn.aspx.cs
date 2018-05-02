@@ -18,9 +18,9 @@ public partial class Client_LogIn : System.Web.UI.Page
     {
        // string cs = ConfigurationManager.ConnectionStrings["QLBanOtoConnectionString"].ConnectionString;
 
-        using (SqlConnection con = new SqlConnection("Data Source=FRT;Initial Catalog=QLBanOto;Integrated Security=True"))
+        using (SqlConnection con = new SqlConnection("Data Source=FRT;Initial Catalog=otohub;Integrated Security=True"))
         {
-            SqlCommand cmd = new SqlCommand("select tenDangNhap,matKhau from TAIKHOAN where tenDangNhap=@tenDangNhap and matKhau=@matKhau", con);
+            SqlCommand cmd = new SqlCommand("select tenDangNhap,matKhau from THANHVIEN where tenDangNhap=@tenDangNhap and matKhau=@matKhau", con);
             cmd.Parameters.AddWithValue("@tenDangNhap",txtTenDN.Text);
             cmd.Parameters.AddWithValue("@matKhau", txtMatKhau.Text);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -32,7 +32,7 @@ public partial class Client_LogIn : System.Web.UI.Page
             if (dt.Rows.Count >0 )
             {
                 Session["id"] = txtTenDN.Text;               
-                Response.Redirect("QuickSearch.aspx");
+                Response.Redirect("DangTinBanOto.aspx");
                 Session.RemoveAll();
             }
             else
@@ -49,9 +49,9 @@ public partial class Client_LogIn : System.Web.UI.Page
     {
         int i = CountMember() + 1;
         String ID = "TK" + i.ToString();
-        using (System.Data.SqlClient.SqlConnection con = new System.Data.SqlClient.SqlConnection("Data Source=FRT;Initial Catalog=QLBanOto;Integrated Security=True"))
+        using (System.Data.SqlClient.SqlConnection con = new System.Data.SqlClient.SqlConnection("Data Source=FRT;Initial Catalog=otohub;Integrated Security=True"))
         {
-            System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand("insert into TAIKHOAN(soTK,tenDangNhap,matKhau, email, soDienThoai, diaChi) values(@IDUser, @TenDangNhap, @MatKhau, @Email, @SoDienThoai, @DiaChi)", con);
+            System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand("insert into THANHVIEN(maThanhVien,tenDangNhap,matKhau, email, soDienThoai, diaChi) values(@IDUser, @TenDangNhap, @MatKhau, @Email, @SoDienThoai, @DiaChi)", con);
             cmd.Parameters.AddWithValue("@IDUser", ID);
             cmd.Parameters.AddWithValue("@TenDangNhap", txtTenDNhap.Text);
             cmd.Parameters.AddWithValue("@MatKhau", txtMKhau.Text);
@@ -67,10 +67,10 @@ public partial class Client_LogIn : System.Web.UI.Page
 
     private int CountMember() {
         int i;
-        using (System.Data.SqlClient.SqlConnection con = new System.Data.SqlClient.SqlConnection("Data Source=FRT;Initial Catalog=QLBanOto;Integrated Security=True"))
+        using (System.Data.SqlClient.SqlConnection con = new System.Data.SqlClient.SqlConnection("Data Source = FRT; Initial Catalog = otohub; Integrated Security = True"))
 
         {
-            SqlCommand cmd = new System.Data.SqlClient.SqlCommand("Select count(*) from TAIKHOAN", con);
+            SqlCommand cmd = new System.Data.SqlClient.SqlCommand("Select count(*) from THANHVIEN", con);
             con.Open();
             i = (int)cmd.ExecuteScalar();
             con.Close();

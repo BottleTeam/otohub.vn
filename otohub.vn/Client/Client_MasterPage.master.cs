@@ -14,12 +14,6 @@ public partial class Client_Client_MasterPage : System.Web.UI.MasterPage
 
 
 
-    public Panel SearchPanel
-    {
-        get {
-            return this.panelSearch;
-        }
-    }
     public Button SearchButton
     {
         get {

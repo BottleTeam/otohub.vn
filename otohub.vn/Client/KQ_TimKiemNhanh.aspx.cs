@@ -11,12 +11,12 @@ using System.Data.SqlClient;
 public partial class Client_TimKiemNhanh : System.Web.UI.Page
 {
 
-   
+ 
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        valueText.Text = Master.SearchTerm.ToString();
-       
+     
+
         if (!IsPostBack)
         {
             GetData("");
@@ -57,6 +57,7 @@ public partial class Client_TimKiemNhanh : System.Web.UI.Page
 
     private void SearchButton_Click(object sender, EventArgs e)
     {
-       
+        valueText.Text = Master.SearchTerm.ToString();
+        GetData(Master.SearchTerm.ToString());
     }
 }
