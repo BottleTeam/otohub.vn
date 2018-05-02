@@ -7,6 +7,9 @@
         .auto-style4 {
             width: 100%;
         }
+        .auto-style23 {
+            width: 653px;
+        }
     </style>
    
 </asp:Content>
@@ -14,32 +17,82 @@
 
     <br />
 
-    <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="Mã xe" GroupItemCount="3">
+    <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="Mã xe">
         <AlternatingItemTemplate>
-           <td runat="server" style="">
+            <td runat="server" style="background-color: #FFFBD6;color: #333333;" class="auto-style23">
                 <table class="auto-style4">
                     <tr>
-                        <td colspan="2">
-                            <asp:ImageButton ID="ImageButton2" runat="server" Height="200px" ImageUrl='<%# Eval("Ảnh", "~/imageoto/{0}") %>' Width="200px" />
+                        <td rowspan="4">
+                            <asp:ImageButton ID="ImageButton1" runat="server" Height="150px" ImageUrl='<%# Eval("Ảnh", "~/imageoto/{0}") %>' Width="200px" />
                         </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <h3><asp:Label ID="Label1" runat="server" Text='<%# Eval("[Tên ôtô]") %>'></asp:Label></h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</td>
+                        <td>Tên hãng:</td>
                         <td>
-                            <h4><asp:Label ID="Label2" runat="server" Text='<%# Eval("Giá") %>'></asp:Label></h4>
+                            <asp:Label ID="Tên_hãngLabel" runat="server" Text='<%# Eval("[Tên hãng]") %>'></asp:Label>
                         </td>
+                        <td>Màu sắc:</td>
+                        <td>
+                            <asp:Label ID="Màu_sắcLabel" runat="server" Text='<%# Eval("[Màu sắc]") %>'></asp:Label>
+                        </td>
+                        <td>Nhiên liệu:</td>
+                        <td>
+                            <asp:Label ID="Nhiên_liệuLabel" runat="server" Text='<%# Eval("[Nhiên liệu]") %>'></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Xuất xứ:</td>
+                        <td>
+                            <asp:Label ID="Xuất_xứLabel" runat="server" Text='<%# Eval("[Xuất xứ]") %>'></asp:Label>
+                        </td>
+                        <td>Số cửa:</td>
+                        <td>
+                            <asp:Label ID="Số_cửaLabel" runat="server" Text='<%# Eval("[Số cửa]") %>'></asp:Label>
+                        </td>
+                        <td>Công suất:</td>
+                        <td>
+                            <asp:Label ID="Công_suấtLabel" runat="server" Text='<%# Eval("[Công suất]") %>'></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Kiểu dáng</td>
+                        <td>
+                            <asp:Label ID="Kiểu_dángLabel" runat="server" Text='<%# Eval("[Kiểu dáng]") %>'></asp:Label>
+                        </td>
+                        <td>Số chỗ:</td>
+                        <td>
+                            <asp:Label ID="Số_chỗLabel" runat="server" Text='<%# Eval("[Số chỗ]") %>'></asp:Label>
+                        </td>
+                        <td>Loại hộp số:</td>
+                        <td>
+                            <asp:Label ID="Loại_hộp_sốLabel" runat="server" Text='<%# Eval("[Loại hộp số]") %>'></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="Tên_ôtôLabel" runat="server" Text='<%# Eval("[Tên ôtô]") %>'></asp:Label>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>Giá:</td>
+                        <td>
+                            <asp:Label ID="GiáLabel" runat="server" Text='<%# Eval("Giá") %>'></asp:Label>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
                     </tr>
                 </table>
                 <br />
             </td>
         </AlternatingItemTemplate>
         <EditItemTemplate>
-            <td runat="server" style="">Mã xe:
+            <td runat="server" style="background-color: #FFCC66;color: #000080;">Mã xe:
                 <asp:Label ID="Mã_xeLabel1" runat="server" Text='<%# Eval("[Mã xe]") %>' />
                 <br />Tên salon:
                 <asp:TextBox ID="Tên_salonTextBox" runat="server" Text='<%# Bind("[Tên salon]") %>' />
@@ -78,7 +131,7 @@
                 <br /></td>
         </EditItemTemplate>
         <EmptyDataTemplate>
-            <table runat="server" style="">
+            <table runat="server" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;">
                 <tr>
                     <td>No data was returned.</td>
                 </tr>
@@ -132,23 +185,73 @@
                 <br /></td>
         </InsertItemTemplate>
         <ItemTemplate>
-            <td runat="server" style="">
+            <td runat="server" style="background-color: #FFFBD6;color: #333333;" class="auto-style23">
                 <table class="auto-style4">
                     <tr>
-                        <td colspan="2">
-                            <asp:ImageButton ID="ImageButton1" runat="server" Height="200px" ImageUrl='<%# Eval("Ảnh", "~/imageoto/{0}") %>' Width="200px" />
+                        <td rowspan="4">
+                            <asp:ImageButton ID="ImageButton1" runat="server" Height="150px" ImageUrl='<%# Eval("Ảnh", "~/imageoto/{0}") %>' Width="200px" />
                         </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <h3><asp:Label ID="Tên_ôtôLabel" runat="server" Text='<%# Eval("[Tên ôtô]") %>'></asp:Label></h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</td>
+                        <td>Tên hãng:</td>
                         <td>
-                            <h4><asp:Label ID="GiáLabel" runat="server" Text='<%# Eval("Giá") %>'></asp:Label></h4>
+                            <asp:Label ID="Tên_hãngLabel" runat="server" Text='<%# Eval("[Tên hãng]") %>'></asp:Label>
                         </td>
+                        <td>Màu sắc:</td>
+                        <td>
+                            <asp:Label ID="Màu_sắcLabel" runat="server" Text='<%# Eval("[Màu sắc]") %>'></asp:Label>
+                        </td>
+                        <td>Nhiên liệu:</td>
+                        <td>
+                            <asp:Label ID="Nhiên_liệuLabel" runat="server" Text='<%# Eval("[Nhiên liệu]") %>'></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Xuất xứ:</td>
+                        <td>
+                            <asp:Label ID="Xuất_xứLabel" runat="server" Text='<%# Eval("[Xuất xứ]") %>'></asp:Label>
+                        </td>
+                        <td>Số cửa:</td>
+                        <td>
+                            <asp:Label ID="Số_cửaLabel" runat="server" Text='<%# Eval("[Số cửa]") %>'></asp:Label>
+                        </td>
+                        <td>Công suất:</td>
+                        <td>
+                            <asp:Label ID="Công_suấtLabel" runat="server" Text='<%# Eval("[Công suất]") %>'></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Kiểu dáng</td>
+                        <td>
+                            <asp:Label ID="Kiểu_dángLabel" runat="server" Text='<%# Eval("[Kiểu dáng]") %>'></asp:Label>
+                        </td>
+                        <td>Số chỗ:</td>
+                        <td>
+                            <asp:Label ID="Số_chỗLabel" runat="server" Text='<%# Eval("[Số chỗ]") %>'></asp:Label>
+                        </td>
+                        <td>Loại hộp số:</td>
+                        <td>
+                            <asp:Label ID="Loại_hộp_sốLabel" runat="server" Text='<%# Eval("[Loại hộp số]") %>'></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="Tên_ôtôLabel" runat="server" Text='<%# Eval("[Tên ôtô]") %>'></asp:Label>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>Giá:</td>
+                        <td>
+                            <asp:Label ID="GiáLabel" runat="server" Text='<%# Eval("Giá") %>'></asp:Label>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
                     </tr>
                 </table>
                 <br />
@@ -158,20 +261,27 @@
             <table runat="server">
                 <tr runat="server">
                     <td runat="server">
-                        <table id="groupPlaceholderContainer" runat="server" border="0" style="">
+                        <table id="groupPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
                             <tr id="groupPlaceholder" runat="server">
                             </tr>
                         </table>
                     </td>
                 </tr>
                 <tr runat="server">
-                    <td runat="server" style="">
+                    <td runat="server" style="text-align: center;background-color: #FFCC66;font-family: Verdana, Arial, Helvetica, sans-serif;color: #333333;">
+                        <asp:DataPager ID="DataPager1" runat="server" PageSize="12">
+                            <Fields>
+                                <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                <asp:NumericPagerField />
+                                <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                            </Fields>
+                        </asp:DataPager>
                     </td>
                 </tr>
             </table>
         </LayoutTemplate>
         <SelectedItemTemplate>
-            <td runat="server" style="">Mã xe:
+            <td runat="server" style="background-color: #FFCC66;font-weight: bold;color: #000080;">Mã xe:
                 <asp:Label ID="Mã_xeLabel" runat="server" Text='<%# Eval("[Mã xe]") %>' />
                 <br />Tên salon:
                 <asp:Label ID="Tên_salonLabel" runat="server" Text='<%# Eval("[Tên salon]") %>' />
